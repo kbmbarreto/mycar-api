@@ -1,2 +1,2 @@
 # mycar-api
-API para controle da manutenção veicular.
+API para controle de manutenção veicular.

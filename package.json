@@ -1,0 +1,24 @@
+{
+  "name": "mycar-api",
+  "version": "1.0.0",
+  "description": "API para controle de manutenção veicular",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbmbarreto/mycar-api.git"
+  },
+  "author": "Kleber Barreto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbmbarreto/mycar-api/issues"
+  },
+  "homepage": "https://github.com/kbmbarreto/mycar-api#readme",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "express": "^4.18.2"
+  }
+}
