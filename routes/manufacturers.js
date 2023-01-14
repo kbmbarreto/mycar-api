@@ -1,10 +1,10 @@
 module.exports = app => {
-    const Components = app.models.components;
+    const Manufacturers = app.models.manufacturers;
 
-    app.route('/components')
+    app.route('/manufacturers')
         .get(async (req, res) => {
             try {
-                const result = await Components.findAll();
+                const result = await Manufacturers.findAll();
                 res.json(result);
             } catch (ex) {
                 res.status(412).json({msg: ex.message});
@@ -12,20 +12,20 @@ module.exports = app => {
         })
         .post(async (req, res) => {
             try {
-                const result = await Components.create(req.body);
+                const result = await Manufacturers.create(req.body);
                 res.json(result);
             } catch (ex) {
                 res.status(412).json({msg: ex.message});
             }
         });
 
-    app.route('/components/:id')
+    app.route('/manufacturers/:id')
         .get(async (req, res) => {
             try {
                 const {id} = req.params;
                 const where = {id};
-                const result = await Components.findOne({where});
-                if (result) {
+                const result = await Manufacturers.findOne({where});
+                if(result) {
                     res.json(result);
                 } else {
                     res.sendStatus(404);
@@ -38,7 +38,7 @@ module.exports = app => {
             try {
                 const {id} = req.params;
                 const where = {id};
-                await Components.update(req.body, {where});
+                await Manufacturers.update(req.body, {where});
                 res.sendStatus(204);
             } catch (ex) {
                 res.status(412).json({msg: ex.message});
@@ -48,10 +48,10 @@ module.exports = app => {
             try {
                 const {id} = req.params;
                 const where = {id};
-                await Components.destroy({where});
+                await Manufacturers.destroy({where});
                 res.sendStatus(204);
             } catch (ex) {
                 res.status(412).json({msg: ex.message});
             }
         });
-};
+}
