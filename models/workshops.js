@@ -15,10 +15,8 @@ module.exports = (app) => {
             }
         },
         notes: {
-            type: {
-                type: DataTypes.STRING,
-                allowNull: true
-            }
+            type: DataTypes.STRING,
+            allowNull: true
         }
     });
     return Workshops;
