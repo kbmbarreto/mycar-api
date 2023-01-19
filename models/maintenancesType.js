@@ -5,7 +5,7 @@ module.exports = app => {
                 { maintenanceType: "Preventiva" },
                 { maintenanceType: "Corretiva" },
                 { maintenanceType: "Opcional" },
-                { maintenanceType: "Recall" },
+                { maintenanceType: "Recall" }
             ]);
         }
     };
