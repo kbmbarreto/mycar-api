@@ -6,6 +6,8 @@ API para controle de manutenção veicular.
 
 * [Express](https://expressjs.com/) - Web Framework
 * [Sequelize](https://sequelizejs.com) - ORM compatível com bancos de dados SQL
+* [Consign](https://www.npmjs.com/package/consign) - Módulo que permite carregar e injetar dependências de maneira simples
+* [Body-parser](https://www.npmjs.com/package/body-parser) - Módulo responsável por converter o corpo da requisição para vários formatos. No nosso caso, em Json
 * [Passport](https://passportjs.org) - Middleware para autenticação de usuários
 * [Mocha](https://mochajs.org) - Test Runner para Node.js
 * [Chai](https://chaijs.com) - Interface BDD e TDD para implementação de testes
