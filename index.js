@@ -5,6 +5,7 @@ const app = express();
 
 consign()
     .include('db.js')
+    .then('models/vehicles.js')
     .then('models/workshops.js')
     .then('models')
     .then('middlewares.js')

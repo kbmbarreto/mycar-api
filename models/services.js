@@ -1,9 +1,11 @@
 const {Model, DataTypes, Deferrable} = require('sequelize')
 require('./workshops')
+require('./vehicles')
 
 module.exports = (app) => {
 
     const Workshops = app.models.workshops;
+    const Vehicles = app.models.vehicles;
 
     console.log(app.models)
     const Services = app.db.define('Services', {
@@ -30,11 +32,12 @@ module.exports = (app) => {
             type: DataTypes.STRING,
             allowNull: true
         },
-        vehicle: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                notEmpty: true
+        idVehicle: {
+            type: DataTypes.BIGINT,
+            references: {
+                model: Vehicles,
+                key: 'id',
+                deferrable: Deferrable.INITIALLY_IMMEDIATE()
             }
         },
         idWorkshop: {
