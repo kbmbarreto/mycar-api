@@ -1,35 +1,50 @@
 const {Model, DataTypes, Deferrable} = require('sequelize')
-require('./workshops')
+
+require('./manufacturers')
 require('./vehicles')
+require('./components')
 
 module.exports = (app) => {
 
-    const Workshops = app.models.workshops;
+    const Manufacturers = app.models.manufacturers;
     const Vehicles = app.models.vehicles;
+    const Components = app.models.components;
 
-    const Services = app.db.define('Services', {
+    const Maintenances = app.db.define('Maintenances', {
         id: {
             type: DataTypes.BIGINT,
             primaryKey: true,
             autoIncrement: true
         },
-        scheduling: {
+        km: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+        maintenanceDate: {
             type: DataTypes.DATE,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-        description: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notEmpty: true
-            }
-        },
-        orderService: {
-            type: DataTypes.STRING,
+        nextKm: {
+            type: DataTypes.DECIMAL,
             allowNull: true
+        },
+        amount: {
+            type: DataTypes.DECIMAL,
+            allowNull: true
+        },
+        idManufacturer: {
+            type: DataTypes.BIGINT,
+            references: {
+                model: Manufacturers,
+                key: 'id',
+                deferrable: Deferrable.INITIALLY_IMMEDIATE
+            }
         },
         idVehicle: {
             type: DataTypes.BIGINT,
@@ -39,14 +54,14 @@ module.exports = (app) => {
                 deferrable: Deferrable.INITIALLY_IMMEDIATE
             }
         },
-        idWorkshop: {
+        idComponent: {
             type: DataTypes.BIGINT,
             references: {
-                model: Workshops,
+                model: Components,
                 key: 'id',
                 deferrable: Deferrable.INITIALLY_IMMEDIATE
             }
         }
     });
-    return Services;
+    return Maintenances;
 }
