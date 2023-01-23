@@ -38,6 +38,13 @@ module.exports = (app) => {
             type: DataTypes.DECIMAL,
             allowNull: true
         },
+        maintenanceType: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
         idManufacturer: {
             type: DataTypes.BIGINT,
             references: {
