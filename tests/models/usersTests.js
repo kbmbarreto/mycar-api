@@ -4,8 +4,9 @@ This test suite uses the Mocha framework and SuperTest library to test the "User
 You should create routes and controllers to handle the routes and validate the request, check if the server is running and adapt the routes to your project.
  */
 
+module.exports = app => {
+
 const request = require('supertest');
-const app = require('your-app-file');
 const assert = require('assert');
 const { sequelize } = require('your-app-file').db;
 
@@ -53,3 +54,5 @@ describe('Users Model', () => {
         assert.deepEqual(res.body, { message: 'Validation error: email must be unique' });
     });
 });
+
+}

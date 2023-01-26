@@ -1,7 +1,8 @@
+module.exports = app => {
+
 const request = require('supertest');
 const assert = require('assert');
 
-module.exports = app => {
     describe('POST /users', () => {
         it('should create a new user', async () => {
             const res = await request(app)
