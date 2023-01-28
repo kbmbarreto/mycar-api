@@ -8,14 +8,14 @@ module.exports = (app) => {
             autoIncrement: true
         },
         workshop: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(64),
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
         notes: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             allowNull: true
         }
     });

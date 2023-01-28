@@ -15,7 +15,7 @@ module.exports = (app) => {
             autoIncrement: true
         },
         notes: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(256),
             allowNull: true,
             validate: {
                 notEmpty: false

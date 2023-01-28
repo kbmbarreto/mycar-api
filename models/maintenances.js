@@ -17,7 +17,7 @@ module.exports = (app) => {
             autoIncrement: true
         },
         km: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(7.3),
             allowNull: false,
             validate: {
                 notEmpty: true
@@ -31,15 +31,15 @@ module.exports = (app) => {
             }
         },
         nextKm: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(7.3),
             allowNull: true
         },
         amount: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(7.2),
             allowNull: true
         },
         maintenanceType: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(45),
             allowNull: false,
             validate: {
                 notEmpty: true

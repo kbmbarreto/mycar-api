@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7cc1dbf0-7f54-4e28-9a0f-4736fbbc85b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/maintenances.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/maintenances.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/manufacturers.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/manufacturers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/shoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/shoppingList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/vehicles.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/vehicles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/workshops.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/workshops.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +92,8 @@
       <workItem from="1674574059687" duration="314000" />
       <workItem from="1674759922756" duration="1526000" />
       <workItem from="1674917285047" duration="86000" />
+      <workItem from="1674917403877" duration="3092000" />
+      <workItem from="1674930304279" duration="966000" />
     </task>
     <servers />
   </component>

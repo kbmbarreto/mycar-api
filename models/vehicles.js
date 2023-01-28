@@ -8,7 +8,7 @@ module.exports = (app) => {
             autoIncrement: true
         },
         vehicle: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(64),
             allowNull: false,
             validate: {
                 notEmpty: true

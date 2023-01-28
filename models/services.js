@@ -21,14 +21,18 @@ module.exports = (app) => {
             }
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
+        amount: {
+            type: DataTypes.DECIMAL(7.2),
+            allowNull: true
+        },
         orderService: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             allowNull: true
         },
         idVehicle: {

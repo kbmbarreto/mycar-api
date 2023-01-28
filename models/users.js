@@ -8,21 +8,21 @@ module.exports = (app) => {
             autoIncrement: true
         },
         name: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(45),
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
         password: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
         email: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(64),
             unique: true,
             allowNull: false,
             validate: {

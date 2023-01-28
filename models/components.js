@@ -8,7 +8,7 @@ module.exports = (app) => {
             autoIncrement: true
         },
         component: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(45),
             allowNull: false,
             validate: {
                 notEmpty: true
