@@ -2,7 +2,7 @@
 
 API para controle de manutenção veicular.
 
-## Técnologias aplicadas
+## Tecnologias aplicadas
 
 * [Express](https://expressjs.com/) - Web Framework
 * [Sequelize](https://sequelizejs.com) - ORM compatível com bancos de dados SQL
