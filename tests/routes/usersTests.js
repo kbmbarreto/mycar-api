@@ -1,4 +1,5 @@
-module.exports = app => {
+const app = require('index.js');
+
 
 const request = require('supertest');
 const assert = require('assert');
@@ -35,4 +36,3 @@ const assert = require('assert');
             assert.deepEqual(res.body, { message: 'User deleted' });
         });
     });
-}
