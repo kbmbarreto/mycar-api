@@ -6,6 +6,7 @@ module.exports = (app) => {
     const Vehicles = app.models.vehicles;
     const Services = app.models.services;
     const Maintenances = app.models.maintenances;
+    const ShoppingList = app.models.shoppingList;
 
     Users.hasMany(Components);
     Components.belongsTo(Users, {foreignKey: 'idUser'});
@@ -39,4 +40,13 @@ module.exports = (app) => {
 
     Components.hasMany(Maintenances);
     Maintenances.belongsTo(Components, { foreignKey: 'idComponent' })
+
+    Users.hasMany(ShoppingList);
+    ShoppingList.belongsTo(Users, {foreignKey: 'idUser'})
+
+    Vehicles.hasMany(ShoppingList);
+    ShoppingList.belongsTo(Vehicles, { foreignKey: 'idVehicle' })
+
+    Components.hasMany(ShoppingList);
+    ShoppingList.belongsTo(Components, { foreignKey: 'idComponent' })
 };
