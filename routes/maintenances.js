@@ -1,5 +1,25 @@
 module.exports = app => {
+
     const Maintenances = app.models.maintenances;
+    const {db} = require("../config");
+
+    app.route('/maintenancesFilter')
+        .get(async (req, res) => {
+            try {
+                const result = await Maintenances.findAll({
+                    raw: true,
+                    attributes: this.attributes,
+                    include: [{
+                        model: db.manufacturer,
+                        required: true,
+                        attributes: ['manufacturer'],
+                    }],
+                    order: [['id', 'DESC']],
+                }).then(Maintenances => console.table(Maintenances))
+            } catch (ex) {
+                res.status(412).json({msg: ex.message});
+            }
+        })
 
     app.route('/maintenances')
         .get(async (req, res) => {
