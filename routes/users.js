@@ -1,7 +1,9 @@
 module.exports = app => {
     const Users = app.models.users;
 
-app.get('/users/:id', async (req, res) => {
+app.route('/user')
+    .all(app.auth.authenticate())
+    .get(async (req, res) => {
     try {
         const { id } = req.params;
         const attributes = ['id', 'name', 'email'];
@@ -15,8 +17,8 @@ app.get('/users/:id', async (req, res) => {
     } catch (ex) {
         res.status(412).json({ msg: ex.message });
     }
-});
-app.delete('/users/:id', async (req, res) => {
+})
+    .delete(async (req, res) => {
     try {
         const { id } = req.params;
         const where = { id };
@@ -25,8 +27,8 @@ app.delete('/users/:id', async (req, res) => {
     } catch (ex) {
         res.status(412).json({ msg: ex.message });
     }
-});
-app.post('/users', async (req, res) => {
+})
+    .post(async (req, res) => {
         try {
             const result = await Users.create(req.body);
             res.json(result);

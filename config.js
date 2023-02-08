@@ -18,5 +18,9 @@ module.exports = {
             createdAt: true,
             updatedAt: true
         },
+    },
+    jwt: {
+        secret: 'sa9(*(*1998@#',
+        options: { session: false }
     }
 };
