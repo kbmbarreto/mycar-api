@@ -20,7 +20,7 @@ module.exports = {
         },
     },
     jwt: {
-        secret: 'sa9(*(*1998@#',
+        secret: 'aaHHuubS546s45845%$¨¨GSFTs987878s46558448K"K"?:?:787&*)6%%¨¨434#hsvh784sa9(*(*1998@#',
         options: { session: false }
     }
 };

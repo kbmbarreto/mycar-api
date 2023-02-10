@@ -28,7 +28,7 @@ app.route('/user')
         res.status(412).json({ msg: ex.message });
     }
 })
-    .post(async (req, res) => {
+    app.post('/users', async (req, res) => {
         try {
             const result = await Users.create(req.body);
             res.json(result);
