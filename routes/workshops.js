@@ -4,7 +4,8 @@ module.exports = app => {
     app.route('/workshops')
         .get(async (req, res) => {
             try {
-                const result = await Workshops.findAll();
+                const where = { userId: req.user.id }
+                const result = await Workshops.findAll({ where });
                 res.json(result);
             } catch (ex) {
                 res.status(412).json({msg: ex.message});
@@ -12,6 +13,7 @@ module.exports = app => {
         })
         .post(async (req, res) => {
             try {
+                req.body.userId = req.user.id;
                 const result = await Workshops.create(req.body);
                 res.json(result);
             } catch (ex) {
@@ -23,8 +25,8 @@ module.exports = app => {
         .get(async (req, res) => {
             try {
                 const {id} = req.params;
-                const where = {id};
-                const result = await Workshops.findOne({where});
+                const where = { id, userId: req.user.id };
+                const result = await Workshops.findOne({ where });
                 if (result) {
                     res.json(result);
                 } else {
@@ -37,8 +39,8 @@ module.exports = app => {
         .put(async (req, res) => {
             try {
                 const {id} = req.params;
-                const where = {id};
-                await Workshops.update(req.body, {where});
+                const where = { id, userId: req.user.id };
+                await Workshops.update(req.body, { where });
                 res.sendStatus(204);
             } catch (ex) {
                 res.status(412).json({msg: ex.message});
@@ -47,8 +49,8 @@ module.exports = app => {
         .delete(async (req, res) => {
             try {
                 const {id} = req.params;
-                const where = {id};
-                await Workshops.destroy({where});
+                const where = { id, userId: req.user.id };
+                await Workshops.destroy({ where });
                 res.sendStatus(204);
             } catch (ex) {
                 res.status(412).json({msg: ex.message});
